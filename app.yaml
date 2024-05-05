@@ -1,0 +1,17 @@
+# librarian app.yaml file contents:
+runtime: python310
+env: standard
+
+service: gender-reveal
+
+instance_class: F4_1G
+automatic_scaling:
+  min_instances: 0
+  max_instances: 1
+
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
+
+entrypoint: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
