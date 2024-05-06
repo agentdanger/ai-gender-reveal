@@ -80,7 +80,7 @@ app = FastAPI()
 
 origins = [
     "https://courtneyperigo.com",
-    "http://www.courtneyperigo.com"
+    "https://www.courtneyperigo.com"
 ]
 
 app.add_middleware(
